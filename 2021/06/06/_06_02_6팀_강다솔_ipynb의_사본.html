@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>함수 | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="함수" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://kangdasol493.github.io/gogopythonblog/2021/06/06/_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.html" />
+<meta property="og:url" content="https://kangdasol493.github.io/gogopythonblog/2021/06/06/_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","url":"https://kangdasol493.github.io/gogopythonblog/2021/06/06/_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kangdasol493.github.io/gogopythonblog/2021/06/06/_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.html"},"headline":"함수","dateModified":"2021-06-06T00:00:00-05:00","datePublished":"2021-06-06T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/gogopythonblog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kangdasol493.github.io/gogopythonblog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/gogopythonblog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/gogopythonblog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/gogopythonblog/about/">About Me</a><a class="page-link" href="/gogopythonblog/search/">Search</a><a class="page-link" href="/gogopythonblog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">함수</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-06T00:00:00-05:00" itemprop="datePublished">
+        Jun 6, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/kangdasol493/gogopythonblog/tree/master/_notebooks/2021_06_02_6팀_강다솔_ipynb의_사본.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/gogopythonblog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/kangdasol493/gogopythonblog/master?filepath=_notebooks%2F2021_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/gogopythonblog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/kangdasol493/gogopythonblog/blob/master/_notebooks/2021_06_02_6팀_강다솔_ipynb의_사본.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/gogopythonblog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021_06_02_6팀_강다솔_ipynb의_사본.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://colab.research.google.com/github/kangdasol493/gogopythonblog/blob/master/_notebooks/2021_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;ArithmeticError&#39;,
+ &#39;AssertionError&#39;,
+ &#39;AttributeError&#39;,
+ &#39;BaseException&#39;,
+ &#39;BlockingIOError&#39;,
+ &#39;BrokenPipeError&#39;,
+ &#39;BufferError&#39;,
+ &#39;BytesWarning&#39;,
+ &#39;ChildProcessError&#39;,
+ &#39;ConnectionAbortedError&#39;,
+ &#39;ConnectionError&#39;,
+ &#39;ConnectionRefusedError&#39;,
+ &#39;ConnectionResetError&#39;,
+ &#39;DeprecationWarning&#39;,
+ &#39;EOFError&#39;,
+ &#39;Ellipsis&#39;,
+ &#39;EnvironmentError&#39;,
+ &#39;Exception&#39;,
+ &#39;False&#39;,
+ &#39;FileExistsError&#39;,
+ &#39;FileNotFoundError&#39;,
+ &#39;FloatingPointError&#39;,
+ &#39;FutureWarning&#39;,
+ &#39;GeneratorExit&#39;,
+ &#39;IOError&#39;,
+ &#39;ImportError&#39;,
+ &#39;ImportWarning&#39;,
+ &#39;IndentationError&#39;,
+ &#39;IndexError&#39;,
+ &#39;InterruptedError&#39;,
+ &#39;IsADirectoryError&#39;,
+ &#39;KeyError&#39;,
+ &#39;KeyboardInterrupt&#39;,
+ &#39;LookupError&#39;,
+ &#39;MemoryError&#39;,
+ &#39;ModuleNotFoundError&#39;,
+ &#39;NameError&#39;,
+ &#39;None&#39;,
+ &#39;NotADirectoryError&#39;,
+ &#39;NotImplemented&#39;,
+ &#39;NotImplementedError&#39;,
+ &#39;OSError&#39;,
+ &#39;OverflowError&#39;,
+ &#39;PendingDeprecationWarning&#39;,
+ &#39;PermissionError&#39;,
+ &#39;ProcessLookupError&#39;,
+ &#39;RecursionError&#39;,
+ &#39;ReferenceError&#39;,
+ &#39;ResourceWarning&#39;,
+ &#39;RuntimeError&#39;,
+ &#39;RuntimeWarning&#39;,
+ &#39;StopAsyncIteration&#39;,
+ &#39;StopIteration&#39;,
+ &#39;SyntaxError&#39;,
+ &#39;SyntaxWarning&#39;,
+ &#39;SystemError&#39;,
+ &#39;SystemExit&#39;,
+ &#39;TabError&#39;,
+ &#39;TimeoutError&#39;,
+ &#39;True&#39;,
+ &#39;TypeError&#39;,
+ &#39;UnboundLocalError&#39;,
+ &#39;UnicodeDecodeError&#39;,
+ &#39;UnicodeEncodeError&#39;,
+ &#39;UnicodeError&#39;,
+ &#39;UnicodeTranslateError&#39;,
+ &#39;UnicodeWarning&#39;,
+ &#39;UserWarning&#39;,
+ &#39;ValueError&#39;,
+ &#39;Warning&#39;,
+ &#39;ZeroDivisionError&#39;,
+ &#39;__IPYTHON__&#39;,
+ &#39;__build_class__&#39;,
+ &#39;__debug__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__import__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;abs&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;ascii&#39;,
+ &#39;bin&#39;,
+ &#39;bool&#39;,
+ &#39;breakpoint&#39;,
+ &#39;bytearray&#39;,
+ &#39;bytes&#39;,
+ &#39;callable&#39;,
+ &#39;chr&#39;,
+ &#39;classmethod&#39;,
+ &#39;compile&#39;,
+ &#39;complex&#39;,
+ &#39;copyright&#39;,
+ &#39;credits&#39;,
+ &#39;delattr&#39;,
+ &#39;dict&#39;,
+ &#39;dir&#39;,
+ &#39;display&#39;,
+ &#39;divmod&#39;,
+ &#39;dreload&#39;,
+ &#39;enumerate&#39;,
+ &#39;eval&#39;,
+ &#39;exec&#39;,
+ &#39;execfile&#39;,
+ &#39;filter&#39;,
+ &#39;float&#39;,
+ &#39;format&#39;,
+ &#39;frozenset&#39;,
+ &#39;get_ipython&#39;,
+ &#39;getattr&#39;,
+ &#39;globals&#39;,
+ &#39;hasattr&#39;,
+ &#39;hash&#39;,
+ &#39;help&#39;,
+ &#39;hex&#39;,
+ &#39;id&#39;,
+ &#39;input&#39;,
+ &#39;int&#39;,
+ &#39;isinstance&#39;,
+ &#39;issubclass&#39;,
+ &#39;iter&#39;,
+ &#39;len&#39;,
+ &#39;license&#39;,
+ &#39;list&#39;,
+ &#39;locals&#39;,
+ &#39;map&#39;,
+ &#39;max&#39;,
+ &#39;memoryview&#39;,
+ &#39;min&#39;,
+ &#39;next&#39;,
+ &#39;object&#39;,
+ &#39;oct&#39;,
+ &#39;open&#39;,
+ &#39;ord&#39;,
+ &#39;pow&#39;,
+ &#39;print&#39;,
+ &#39;property&#39;,
+ &#39;range&#39;,
+ &#39;repr&#39;,
+ &#39;reversed&#39;,
+ &#39;round&#39;,
+ &#39;runfile&#39;,
+ &#39;set&#39;,
+ &#39;setattr&#39;,
+ &#39;slice&#39;,
+ &#39;sorted&#39;,
+ &#39;staticmethod&#39;,
+ &#39;str&#39;,
+ &#39;sum&#39;,
+ &#39;super&#39;,
+ &#39;tuple&#39;,
+ &#39;type&#39;,
+ &#39;vars&#39;,
+ &#39;zip&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">calendar</span>  <span class="c1"># calendar 모듈 import</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">month</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 달력 년월을 지정 출력</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>      May 2021
+Mo Tu We Th Fr Sa Su
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> 
+
+<span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">23</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date1</span><span class="o">-</span><span class="n">date2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9658 days, 0:00:00
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1"># Random float x, 0.0 &lt;= x &lt; 1.0</span>
+
+<span class="c1">#2개의 숫자 사이의 랜덤 실수를 리턴합니다.</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Random float x, 1.0 &lt;= x &lt; 10.0</span>
+
+
+<span class="c1">#2개의 숫자 사이의 랜덤 정수를 리턴합니다. (2번째 인자로 넘어온 정수도 범위에 포함시킴)</span>
+<span class="n">c</span> <span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Integer from 1 to 10, endpoints included</span>
+
+
+<span class="c1">#range(start, stop, step) 함수로 만들어지는 정수 중에 하나를 랜덤하게 리턴합니다.</span>
+<span class="n">d</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Even integer from 0 to 100</span>
+
+<span class="c1">#choice() 함수 랜덤하게 하나의 원소를 선택합니다.</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;abcdefghij&#39;</span><span class="p">)</span> <span class="c1"># Choose a random element </span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;가위&#39;</span><span class="p">,</span><span class="s1">&#39;바위&#39;</span><span class="p">,</span><span class="s1">&#39;보&#39;</span><span class="p">])</span>
+
+<span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;가위&#39;</span><span class="p">,</span><span class="s1">&#39;바위&#39;</span><span class="p">,</span><span class="s1">&#39;보&#39;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;바위&#39;, &#39;보&#39;, &#39;가위&#39;]
+[&#39;바위&#39;, &#39;보&#39;, &#39;가위&#39;] 9.83615143407867 5 88 a 가위
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;안녕하세요!!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬의 세계에 오신 것을 환영합니다.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;즐거운 시간 되세요!!&#39;</span><span class="p">)</span>
+    
+<span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕하세요!!
+파이썬의 세계에 오신 것을 환영합니다.
+즐거운 시간 되세요!!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕하세요, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">님!!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;파이썬의 세계에 오신 것을 환영합니다.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;즐거운 시간 되세요!!&#39;</span><span class="p">)</span>
+<span class="n">say_hello</span><span class="p">(</span><span class="s1">&#39;강다솔&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕하세요, 강다솔님!!
+파이썬의 세계에 오신 것을 환영합니다.
+즐거운 시간 되세요!!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+<span class="n">circle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>78.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_plus</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">result</span>
+    
+<span class="n">get_plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_minus</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">result</span>
+    
+<span class="n">get_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_plus_minus</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">plus</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="n">minus</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">plus</span><span class="p">,</span><span class="n">minus</span>
+    
+<span class="n">get_plus_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(3, -1)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_multi</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">result</span>
+    
+<span class="n">get_multi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_division</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">result</span>
+    
+<span class="n">get_division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_plu_min_mul_div</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">plu</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="n">mul</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+
+    <span class="k">if</span> <span class="n">num2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;두 번째 변수에 다른 수를 입력하세요.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">div</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+        <span class="k">return</span> <span class="n">plu</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="n">mul</span><span class="p">,</span><span class="n">div</span>
+    
+<span class="n">get_plu_min_mul_div</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(6, 2, 8, 2.0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># 함수 밖에서 생성한 변수를 &#39;전역변수&#39;라 한다.</span>
+
+<span class="c1"># 함수내 변수를 밖에서 사용 못함</span>
+<span class="k">def</span> <span class="nf">get_plus_minus</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">plus</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="n">minus</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">plus</span><span class="p">,</span><span class="n">minus</span>
+<span class="c1"># get_plus_minus(1,2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="p">,</span><span class="n">minus</span><span class="p">)</span>   <span class="c1">#오류</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-31-0931eb978c32&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     <span class="ansi-green-fg">return</span> plus<span class="ansi-blue-fg">,</span>minus
+<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-red-fg"># get_plus_minus(1,2)</span>
+<span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>plus<span class="ansi-blue-fg">,</span>minus<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;plus&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">():</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;반지름:&#39;</span><span class="p">))</span>
+<span class="n">circle_area</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>반지름:5
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>78.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>※ 함수 안에서 전역변수의 값을 변경하려면 global 키워드를 사용해야 한다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">():</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;반지름:&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;원의 넓이:&#39;</span><span class="p">,</span><span class="n">circle_area</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="c1"># 변경안됨</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>반지름:5
+원의 넓이: 78.5
+0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">area</span>    <span class="c1"># &lt;- gloal 키워드 사용</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;반지름:&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;원의 넓이:&#39;</span><span class="p">,</span><span class="n">circle_area</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="c1"># 변경</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>반지름:5
+원의 넓이: 78.5
+78.5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>디폴트 인수 &gt; 인수가 부족한 경우, 기본값을 사용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕 </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;철수&#39;</span><span class="p">,</span><span class="s1">&#39;좋은 아침이야&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕 철수,좋은 아침이야
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕 </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;철수&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-37-f03df1934f4c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">def</span> greet<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">,</span>msg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;안녕 {name},{msg}&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>greet<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;철수&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: greet() missing 1 required positional argument: &#39;msg&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;친구&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;잘 지내니?&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕 </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;영희&#39;</span><span class="p">,</span><span class="s1">&#39;오랜만이야&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕 영희,오랜만이야
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;친구&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;잘 지내니?&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕 </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;영희&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕 영희,잘 지내니?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;친구&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;잘 지내니?&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕 </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>안녕 친구,잘 지내니?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>키워드 인수 &gt; 위치 인수와 키워드 인수를 혼합해서 사용할 수 있지만, 위치인수를 먼저 사용해야 한다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">calc</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1, 3, 5)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">calc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 위치 인수를 먼저 사용</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">calc</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 키워드 인수를 먼저 쓰면 에러!!!!!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">calc</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#47588;&#44060;&#48320;&#49688;-*args">&#47588;&#44060;&#48320;&#49688; *args<a class="anchor-link" href="#&#47588;&#44060;&#48320;&#49688;-*args"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">avrg1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>  <span class="c1">#args는 튜플 데이터형</span>
+    <span class="k">return</span> <span class="n">avrg1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>      <span class="c1"># 인수 3개</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 인수 5개</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2.0
+3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">avrg1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">avrg1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, 2, 3)
+2.0
+(1, 2, 3, 4, 5)
+3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="c1">#소수여부 판단하여 리턴</span>
+    <span class="c1">#소수:True, 소수아님:False</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="n">input_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;숫자:&#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">input_num</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;소수입니다.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;소수가 아닙니다.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자:89
+소수입니다.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="c1"># 짝수여부 판단하여 리턴</span>
+    <span class="c1"># 짝수:True, 짝수아님:False</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">input_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;숫자:&#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">is_even</span><span class="p">(</span><span class="n">input_num</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;짝수입니다.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;짝수가 아닙니다.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>숫자:10
+짝수입니다.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">even</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;짝수입니다.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;홀수입니다.&#39;</span><span class="p">)</span>
+<span class="n">input_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;수를 입력하세요: &#39;</span><span class="p">))</span>
+<span class="n">even</span><span class="p">(</span><span class="n">input_num</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>수를 입력하세요: 6
+짝수입니다.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">today_menu</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;== 오늘의 메뉴 ==&#39;</span><span class="p">)</span>
+<span class="n">today_menu</span><span class="p">(</span><span class="s1">&#39;김밥&#39;</span><span class="p">,</span><span class="s1">&#39;떡볶이&#39;</span><span class="p">,</span><span class="s1">&#39;튀김&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>== 오늘의 메뉴 ==
+김밥
+떡볶이
+튀김
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">today_menu</span><span class="p">(</span><span class="o">*</span><span class="n">menu</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">menu</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;== 오늘의 메뉴 ==&#39;</span><span class="p">)</span>
+<span class="n">today_menu</span><span class="p">(</span><span class="s1">&#39;김밥&#39;</span><span class="p">,</span><span class="s1">&#39;떡볶이&#39;</span><span class="p">,</span><span class="s1">&#39;튀김&#39;</span><span class="p">,</span><span class="s1">&#39;순대&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>== 오늘의 메뉴 ==
+김밥
+떡볶이
+튀김
+순대
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="n">plus</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">num1</span><span class="p">,</span><span class="n">num2</span> <span class="p">:</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>30
+30
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># 첫번째 인자는 함수명, 두번째 인자는 순서가 있는 자료형</span>
+
+<span class="n">mylist</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">plus10</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">num</span> <span class="p">:</span> <span class="n">num</span><span class="o">+</span><span class="mi">10</span>
+
+<span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">plus10</span><span class="p">,</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[11, 12, 13, 14, 15]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">mylist</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;나의아저씨&#39;</span><span class="p">,</span><span class="s1">&#39;멜로가체질&#39;</span><span class="p">,</span><span class="s1">&#39;로스쿨&#39;</span><span class="p">]</span>
+<span class="n">pluslove</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">drama</span> <span class="p">:</span> <span class="n">drama</span> <span class="o">+</span> <span class="s1">&#39; 짱!!&#39;</span>
+
+<span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">pluslove</span><span class="p">,</span><span class="n">mylist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;나의아저씨 짱!!&#39;, &#39;멜로가체질 짱!!&#39;, &#39;로스쿨 짱!!&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>재귀함수</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># 재귀호출은 일반적인 상황에서는 잘 사용하지 않지만 알고리즘을 구현할 때 매우 유용</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># 종료 조건을 만들어야함 count가 0이면 다시 호출하지 않고 끝냄</span>
+        <span class="k">return</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+
+    <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>     <span class="c1"># count를 1 감소시킨 뒤</span>
+    <span class="n">hello</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>   <span class="c1"># 다시 hello에 넣음</span>
+
+<span class="n">hello</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># hello 함수 호출</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, World! 3
+Hello, World! 2
+Hello, World! 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>     <span class="c1"># 종료 조건을 만들어야함 count가 0이면 다시 호출하지 않고 끝냄</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">factorial</span><span class="o">=</span><span class="n">num</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">UnboundLocalError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-119-43a2ec6de67f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     factorial<span class="ansi-blue-fg">=</span>num<span class="ansi-blue-fg">*</span>factorial<span class="ansi-blue-fg">(</span>num<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>factorial<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-119-43a2ec6de67f&gt;</span> in <span class="ansi-cyan-fg">factorial</span><span class="ansi-blue-fg">(num)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">if</span> num <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">:</span>     <span class="ansi-red-fg"># 종료 조건을 만들어야함 count가 0이면 다시 호출하지 않고 끝냄</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         <span class="ansi-green-fg">return</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span>factorial<span class="ansi-blue-fg">=</span>num<span class="ansi-blue-fg">*</span>factorial<span class="ansi-blue-fg">(</span>num<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-intense-fg ansi-bold">      6</span> factorial<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">UnboundLocalError</span>: local variable &#39;factorial&#39; referenced before assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>     <span class="c1"># 종료 조건을 만들어야함 count가 0이면 다시 호출하지 않고 끝냄</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+4
+3
+2
+120
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#50696;&#51228;_&#54200;&#51032;&#51216;&#51116;&#44256;&#44288;&#47532;&#49884;&#49828;&#53596;">&#50696;&#51228;_&#54200;&#51032;&#51216;&#51116;&#44256;&#44288;&#47532;&#49884;&#49828;&#53596;<a class="anchor-link" href="#&#50696;&#51228;_&#54200;&#51032;&#51216;&#51116;&#44256;&#44288;&#47532;&#49884;&#49828;&#53596;"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">dict_prod</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;삼각김밥&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;샌드위치&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;초코우유&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;커피우유&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+
+<span class="c1"># 1.재고등록</span>
+<span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;상품명:&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span><span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">num</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;개수:&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="p">:</span>
+            <span class="n">dict_prod</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dict_prod</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2.제품판매</span>
+<span class="k">def</span> <span class="nf">sell</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;상품명:&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;상품명을 정확히 입력하세요.&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="p">:</span>
+            <span class="n">num</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;개수:&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">dict_prod</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;재고가 부족합니다.&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dict_prod</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dict_prod</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">}</span><span class="s1"> 개 남았습니다.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3.재고확인</span>
+<span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;상품명을 입력하세요(전체조회는&quot;전체상품&quot;):&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;전체상품&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;상품명을 정확히 입력하세요.&#39;</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dict_prod</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">dict_prod</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1"> 개&#39;</span><span class="p">)</span>    <span class="c1"># get[name]이라고 쓰면 오류난다!! 이유 한참 찾음..</span>
+
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    ===== 재고관리 시스템 =====</span>
+<span class="s1">    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료</span>
+<span class="s1">    &#39;&#39;&#39;</span><span class="p">)</span>
+
+    <span class="n">menu</span><span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;메뉴를 선택하세요:&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1:재고등록&#39;</span><span class="p">)</span>
+        <span class="n">register</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2:제품판매&#39;</span><span class="p">)</span>
+        <span class="n">sell</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3:재고확인&#39;</span><span class="p">)</span>
+        <span class="n">check</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:3
+3:재고확인
+상품명을 입력하세요(전체조회는&#34;전체상품&#34;):바나나우유
+상품명을 정확히 입력하세요.
+상품명을 입력하세요(전체조회는&#34;전체상품&#34;):초코우유
+--------------------------------------------------
+초코우유 : 10 개
+상품명을 입력하세요(전체조회는&#34;전체상품&#34;):삼각김밥
+--------------------------------------------------
+삼각김밥 : 5 개
+상품명을 입력하세요(전체조회는&#34;전체상품&#34;):전체상품
+--------------------------------------------------
+삼각김밥 : 5
+샌드위치 : 3
+초코우유 : 10
+커피우유 : 20
+
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:
+
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">dict_menus</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">def</span> <span class="nf">registration</span><span class="p">():</span> <span class="c1"># 1.재고등록</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;상품명:&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;갯수:&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dict_menus</span><span class="p">:</span>
+            <span class="n">dict_menus</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dict_menus</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_menus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sale</span><span class="p">():</span> <span class="c1"># 2.제품판매</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;상품명:&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;갯수:&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">&gt;</span><span class="n">dict_menus</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;재고가 부족합니다.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dict_menus</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dict_menus</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">}</span><span class="s1">개 남았습니다.&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check</span><span class="p">():</span> <span class="c1"># 3.재고확인</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_menus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    ===== 재고관리 시스템 =====</span>
+<span class="s1">    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료</span>
+<span class="s1">    &#39;&#39;&#39;</span><span class="p">)</span>
+    <span class="n">menu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;메뉴를 선택하세요:&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">menu</span><span class="o">==</span><span class="s1">&#39;0&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">menu</span><span class="o">==</span><span class="s1">&#39;1&#39;</span><span class="p">:</span>
+        <span class="n">registration</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">menu</span><span class="o">==</span><span class="s1">&#39;2&#39;</span><span class="p">:</span>
+        <span class="n">sale</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">menu</span><span class="o">==</span><span class="s1">&#39;3&#39;</span><span class="p">:</span>
+        <span class="n">check</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:1
+상품명:바나나
+갯수:3
+상품명:
+-------------------------------
+바나나 : 3
+
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:2
+상품명:바나나
+갯수:3
+0개 남았습니다.
+상품명:
+
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:3
+바나나 : 0
+
+    ===== 재고관리 시스템 =====
+    1:재고등록, 2:제품판매, 3:재고확인, 0:프로그램 종료
+    
+메뉴를 선택하세요:0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/gogopythonblog/2021/06/06/_06_02_6%ED%8C%80_%EA%B0%95%EB%8B%A4%EC%86%94_ipynb%EC%9D%98_%EC%82%AC%EB%B3%B8.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/gogopythonblog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/gogopythonblog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/gogopythonblog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/gogopythonblog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/gogopythonblog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
